@@ -3,6 +3,7 @@ Explore the phases of the moon and learn more about astrology of the moon.
 
 Uses the basic plan of RapidAPI's Moon Phase API:
 [Moon Phase API](https://rapidapi.com/MoonAPIcom/api/moon-phase)
+
 Sign up and get your API key, and follow the instructions in the .env.example file.
 
 
