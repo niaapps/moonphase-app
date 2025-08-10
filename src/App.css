@@ -61,5 +61,96 @@ main {
 
 .line-wrap{
   max-width: 350px;
+}
+/* Navigation Component Styles */
+.navigation {
+  background-color: #061534;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Phases Component Styles */
+.phases-page {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.phases-intro {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.phase-card {
+  background-color: #061534;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.phase-card:hover {
+  transform: translateY(-5px);
+}
+
+.phase-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 15px 0;
+}
+
+.phase-card h2 {
+  margin-top: 0;
+  color: white;
+}
+
+.phase-card p {
+  font-size: 16px;
   line-height: 1.5;
 }

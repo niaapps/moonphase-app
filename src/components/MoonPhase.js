@@ -89,6 +89,8 @@ const MoonPhase = () => {
   const nextNew = moonData.moon.detailed.upcoming_phases.new_moon.next.days_ahead;
   return (
     <div className="moon-phase-container">
+      <h1>Phases of the Moon</h1>
+      <br />
       <h2>Current Moon Phase</h2>
       <div className="moon-visualization">
         <img 
