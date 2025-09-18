@@ -26,7 +26,8 @@ const MoonPhase = () => {
     'Waning Gibbous': waningGibbous,
     'Waning gibbous': waningGibbous,
     'Last Quarter': lastQuarter,
-    'Waning Crescent': waningCrescent
+    'Waning Crescent': waningCrescent,
+    'Waning crescent': waningCrescent
   };
   const phasesDisplayName ={
     'New Moon': 'New Moon',

@@ -154,3 +154,62 @@ main {
   font-size: 16px;
   line-height: 1.5;
 }
+
+/* Phase Animation */
+.phase-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.phase-animation {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.phase-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding-bottom: 100px;
+
+}
+
+.phase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+/* Animation duration exactly matches the cycle time */
+/* .phase-item:nth-child(1) { animation: crossFade .8s infinite 0s; }    
+.phase-item:nth-child(2) { animation: crossFade .8s infinite .1s; }  
+.phase-item:nth-child(3) { animation: crossFade .8s infinite .2s; } 
+.phase-item:nth-child(4) { animation: crossFade .8s infinite .3s; }  
+.phase-item:nth-child(5) { animation: crossFade .8s infinite .4s; }
+.phase-item:nth-child(6) { animation: crossFade .8s infinite .5s; }
+.phase-item:nth-child(7) { animation: crossFade .8s infinite .6s; }
+.phase-item:nth-child(8) { animation: crossFade .8s infinite .7s; } */
+.phase-item:nth-child(1) { animation: crossFade 2s infinite 0s; }    
+.phase-item:nth-child(2) { animation: crossFade 2s infinite 0.25s; }  
+.phase-item:nth-child(3) { animation: crossFade 2s infinite 0.5s; } 
+.phase-item:nth-child(4) { animation: crossFade 2s infinite 0.75s; }  
+.phase-item:nth-child(5) { animation: crossFade 2s infinite 1s; }
+.phase-item:nth-child(6) { animation: crossFade 2s infinite 1.25s; }
+.phase-item:nth-child(7) { animation: crossFade 2s infinite 1.5s; }
+.phase-item:nth-child(8) { animation: crossFade 2s infinite 1.75s; }
+
+/* Crossfade keyframes - only fade in, stay visible until next phase fades in */
+@keyframes crossFade {
+    0% { opacity: 0; }
+    3% { opacity: 1; }     /* Fade in over 0.48s (3% of 16s) */
+    12.5% { opacity: 1; }  /* Stay fully visible */
+    15.5% { opacity: 0; }  /* Fade out as next phase fades in */
+    100% { opacity: 0; }
+}
