@@ -18,12 +18,30 @@ const MoonPhase = () => {
   const phaseImages = {
     'New Moon': newMoon,
     'Waxing Crescent': waxingCrescent,
+    'Waxing crescent': waxingCrescent, // for some odd reason on the /advanced calls some of these comes back lowercase
     'First Quarter': firstQuarter,
     'Waxing Gibbous': waxingGibbous,
+    'Waxing gibbous': waxingGibbous, 
     'Full Moon': fullMoon,
     'Waning Gibbous': waningGibbous,
+    'Waning gibbous': waningGibbous,
     'Last Quarter': lastQuarter,
     'Waning Crescent': waningCrescent
+  };
+  const phasesDisplayName ={
+    'New Moon': 'New Moon',
+    'New moon': 'New Moon',
+    'Waxing Crescent': 'Waxing Crescent',
+    'Waxing crescent': 'Waxing Crescent',
+    'First Quarter': 'First Quarter',
+    'Waxing Gibbous': 'Waxing Gibbous',
+    'Waxing gibbous': 'Waxing Gibbous',
+    'Full Moon': 'Full Moon',
+    'Waning Gibbous': 'Waning Gibbous',
+    'Waning gibbous': 'Waning Gibbous',
+    'Last Quarter': 'Last Quarter',
+    'Waning Crescent': 'Waning Crescent',
+    'Waning crescent': 'Waning Crescent'
   };
 
   useEffect(() => {
@@ -33,7 +51,7 @@ const MoonPhase = () => {
       
       try {
         console.log("Sending request to API...");
-        const response = await fetch("https://moon-phase.p.rapidapi.com/basic", {
+        const response = await fetch("https://moon-phase.p.rapidapi.com/advanced", {
           "method": "GET",
           "headers": {
             "x-rapidapi-host": "moon-phase.p.rapidapi.com",
@@ -65,22 +83,40 @@ const MoonPhase = () => {
   if (loading) return <div>Loading moon data...</div>;
   if (error) return <div>{error}</div>;
 
-  const phaseImage = phaseImages[moonData.phase_name] || newMoon;
-
+  const phaseImage = phaseImages[moonData.moon.phase_name] || newMoon;
+  const displayPhaseName = phasesDisplayName[moonData.moon.phase_name] || moonData.moon.phase_name;
+  const nextFull = moonData.moon.detailed.upcoming_phases.full_moon.next.days_ahead;
+  const nextNew = moonData.moon.detailed.upcoming_phases.new_moon.next.days_ahead;
   return (
     <div className="moon-phase-container">
       <h2>Current Moon Phase</h2>
       <div className="moon-visualization">
         <img 
           src={phaseImage} 
-          alt={moonData.phase_name} 
+          alt={moonData.moon.phase_name} 
           className="moon-image" 
         />
       </div>
       <div className="moon-details">
-        <p className="phase-name">{moonData.phase_name}</p>
-        <p>Days until next full moon: {moonData.days_until_next_full_moon}</p>
-        <p>Days until next new moon: {moonData.days_until_next_new_moon}</p>
+        <h2 className="phase-name">{displayPhaseName}</h2>
+        <p> Illumination: {moonData.moon.illumination}</p>
+        <p> Current Age: {moonData.moon.age_days}</p>
+        <p> Current Zodiac Sign: {moonData.moon.zodiac.moon_sign}</p>
+        {nextFull < nextNew ? (
+          <>
+            <p>Days until next full moon: {nextFull}</p>
+            <p>Days until next new moon: {nextNew}</p>
+        
+          </>
+        ) : (
+          <>
+          <p>Days until next new moon: {nextNew}</p>
+          <p>Days until next full moon: {nextFull}</p>
+       
+          </>
+        )}
+        <p className='line-wrap'> Next {moonData.moon.next_lunar_eclipse.type} is viewable from: {moonData.moon.next_lunar_eclipse.visibility_regions} on {moonData.moon.next_lunar_eclipse.datestamp} </p>
+
       </div>
     </div>
   );

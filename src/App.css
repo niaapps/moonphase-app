@@ -49,3 +49,17 @@ main {
   height: 400px;
   border-radius: 50%;
 }
+
+.moon-details h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.moon-details p {
+  margin-bottom: 12px;
+}
+
+.line-wrap{
+  max-width: 350px;
+  line-height: 1.5;
+}
