@@ -28,11 +28,11 @@ const PhasesPage = () => {
   return (
     <div className="phases-page">
       <h1>Moon Phases</h1>
-      <p className="phases-intro">The Moon goes through a complete cycle of phases approximately every 29.5 days.</p>
+      <h2 className="phases-intro">The Moon goes through a complete cycle of phases approximately every 29.5 days.</h2>
 
       <PhaseAnimation phasesArray={phases} />
 
-      <h2>In Astrology, the Moon represents the personal self, the feelings and the unconscious. It is a reflection of your internal influence, as opposed to the Sun, which is your alignment given external influence. The Moon also stands for security and instinctual or habitual patterns, as well as the ability to relate to others. The Moon rules Cancer and is exalted in Taurus. The Moon represents the feminine and nurturing part of oneself. The Moon also represents an attunement from the past, which operates at an instinctive or habitual level in your present life.</h2>
+      <p className='phases-intro'>In Astrology, the Moon represents the personal self, the feelings and the unconscious. It is a reflection of your internal influence, as opposed to the Sun, which is your alignment given external influence. The Moon also stands for security and instinctual or habitual patterns, as well as the ability to relate to others. The Moon rules Cancer and is exalted in Taurus. The Moon represents the feminine and nurturing part of oneself. The Moon also represents an attunement from the past, which operates at an instinctive or habitual level in your present life.</p>
       <br/>
 
       <div className="phases-grid">
