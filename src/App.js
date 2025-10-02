@@ -1,14 +1,15 @@
-import MoonPhase from './components/MoonPhase';
+import { Outlet } from 'react-router-dom';
 import './App.css';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Phases of the Moon</h1>
+          <Navigation />
       </header>
       <main>
-        <MoonPhase />
+        <Outlet />
       </main>
     </div>
   );
