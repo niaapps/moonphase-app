@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html, body, #root {
   height: 100%;
   width: 100%;
+  color: white;
 }
 
 .App {
@@ -23,7 +25,6 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   padding: 20px 0;
 }
 main {
@@ -41,7 +42,6 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  color: white;
 }
 
 .moon-image {
@@ -98,13 +98,14 @@ main {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Phases Component Styles */
-.phases-page {
+/* Shared page style */
+.page {
   background-color: black;
-  color: white;
   padding: 20px;
   min-height: 100vh;
 }
+
+/* Phases Component Styles */
 
 .phases-intro {
   max-width: 800px;
@@ -147,7 +148,6 @@ main {
 
 .phase-card h2 {
   margin-top: 0;
-  color: white;
 }
 
 .phase-card p {
@@ -212,4 +212,25 @@ main {
     12.5% { opacity: 1; }  /* Stay fully visible */
     15.5% { opacity: 0; }  /* Fade out as next phase fades in */
     100% { opacity: 0; }
+}
+
+/* Astrology Page Styles */
+.signs-grid {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.icon-container{
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.sign-icon {
+  font-size: 120px;
+}
+
+.icon-container:hover {
+  transform: scale(1.2);
 }

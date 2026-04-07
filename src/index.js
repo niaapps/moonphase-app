@@ -5,7 +5,8 @@ import { RouterProvider } from 'react-router';
 import App from './App';
 import MoonPhase from './components/MoonPhase';
 import PhasesPage from './components/PhasesPage';
-import './index.css';
+import AstrologyPage from './components/AstrologyPage';
+import './index.css'; 
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "phases",
         element: <PhasesPage />
+      },
+      {
+        path: "signs",
+        element: <AstrologyPage />
       }
     ]
   }
