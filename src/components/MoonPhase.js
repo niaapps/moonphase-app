@@ -118,7 +118,7 @@ const MoonPhase = () => {
        
           </>
         )}
-        <p className='line-wrap'> Next {moonData.moon.next_lunar_eclipse.type} is viewable from: {moonData.moon.next_lunar_eclipse.visibility_regions} on {moonData.moon.next_lunar_eclipse.datestamp} </p>
+        {/* <p className='line-wrap'> Next {moonData.moon.next_lunar_eclipse?.type} is viewable from: {moonData.moon.next_lunar_eclipse?.visibility_regions} on {moonData.moon.next_lunar_eclipse?.datestamp} </p> */}
 
       </div>
     </div>

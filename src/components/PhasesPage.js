@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import newMoon from '../assets/images/new.jpg';
 import waxingCrescent from '../assets/images/waxing_crescent.jpg';
@@ -26,7 +26,7 @@ const PhasesPage = () => {
   ];
 
   return (
-    <div className="phases-page">
+    <div className="page">
       <h1>Moon Phases</h1>
       <h2 className="phases-intro">The Moon goes through a complete cycle of phases approximately every 29.5 days.</h2>
 

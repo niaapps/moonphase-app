@@ -11,6 +11,7 @@ const Navigation = () => {
         <li>
           <Link to="/phases" className="nav-link">Phases</Link>
         </li>
+        <li><Link to="/signs" className="nav-link">Astrology</Link></li>
       </ul>
     </nav>
   );
